@@ -2,7 +2,7 @@
 
 A governance layer built on top of the e-commerce data lake — cataloging what data exists and where using Microsoft Purview, classifying sensitive fields, attaching business context, and validating data quality with automated Great Expectations checks. This is the fifth and final project in a series exploring different facets of the Azure data platform: this one focuses on *trusting* the data rather than moving or analyzing it.
 
-![Data Docs Report](./reports/data-quality-report-screenshot.png)
+![Architecture Diagram](./architecture-diagram.png)
 
 ---
 
@@ -34,6 +34,11 @@ ADLS Gen2 (raw / staging / curated)
 | **Azure Data Lake Storage Gen2** | The underlying data source being cataloged and validated (shared with [Project 1](../azure-ecommerce-analytics-pipeline)) |
 
 ---
+![Purview](./screenshot 1.png)
+![Purview](./screenshot 2.png)
+![Purview](./screenshot 3.png)
+![Purview](./screenshot 4.png)
+![Purview](./screenshot 5.png)
 
 ## 📊 Findings
 
@@ -57,6 +62,10 @@ ADLS Gen2 (raw / staging / curated)
 - Glossary terms were not yet attached to these columns at time of writing — see Next Steps.
 
 ### Great Expectations — Data Quality Validation
+
+![Data Quality](./screenshot 6.png)
+![Data Quality](./screenshot 7.png)
+
 
 **Result: ✅ All 5 expectations passed** against 112,650 rows of curated sales data.
 
@@ -104,14 +113,17 @@ azure-ecommerce-data-governance/
 ├── architecture-diagram.png
 ├── scripts/
 │   └── run_data_quality_checks.py
-├── data/
-│   └── curated_sales_sample.csv
 ├── gx/
-│   └── (Great Expectations config, expectation suites, Data Docs)
+│   └── ecommerce_quality_suite.html
 └── reports/
-    ├── purview-classification-screenshot.png
-    ├── purview-glossary-screenshot.png
-    └── data-quality-report-screenshot.png
+    ├── screenshot 1.png
+    ├── screenshot 2.png
+    ├── screenshot 3.png
+    ├── screenshot 4.png
+    ├── screenshot 5.png
+    ├── screenshot 6.png
+    └── screenshot 7.png
+    
 ```
 
 ---
@@ -129,13 +141,13 @@ azure-ecommerce-data-governance/
 
 ## 🔗 Related Projects
 
-- **[Azure E-Commerce Analytics Pipeline](../azure-ecommerce-analytics-pipeline)** — the batch pipeline whose curated output this project catalogs and validates
-- **[Azure E-Commerce Streaming Pipeline](../azure-ecommerce-streaming-pipeline)** — real-time ingestion with Event Hubs and Stream Analytics
-- **[Azure E-Commerce Dimensional Warehouse](../azure-ecommerce-dimensional-warehouse)** — star schema modeling on Azure SQL Database
-- **[Azure E-Commerce Demand Forecasting](../azure-ecommerce-demand-forecasting)** — time-series forecasting with Azure ML AutoML
+- **[Azure E-Commerce Analytics Pipeline](https://github.com/shijithpulikkal/azure-ecommerce-analytics-pipeline)** — the batch pipeline whose curated output this project catalogs and validates
+- **[Azure E-Commerce Streaming Pipeline](https://github.com/shijithpulikkal/azure-ecommerce-streaming-pipeline)** — real-time ingestion with Event Hubs and Stream Analytics
+- **[Azure E-Commerce Dimensional Warehouse](https://github.com/shijithpulikkal/azure-ecommerce-dimensional-warehouse)** — star schema modeling on Azure SQL Database
+- **[Azure E-Commerce Demand Forecasting](https://github.com/shijithpulikkal/azure-ecommerce-demand-forecasting)** — time-series forecasting with Azure ML AutoML
 
 ---
 
-## 🧾 License
+
 
 <!-- Add if relevant -->
