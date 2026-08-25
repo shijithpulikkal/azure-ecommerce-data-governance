@@ -34,11 +34,11 @@ ADLS Gen2 (raw / staging / curated)
 | **Azure Data Lake Storage Gen2** | The underlying data source being cataloged and validated (shared with [Project 1](../azure-ecommerce-analytics-pipeline)) |
 
 ---
-![Purview](./reports/screenshot 1.png)
-![Purview](./reports/screenshot 2.png)
-![Purview](./reports/screenshot 3.png)
-![Purview](./reports/screenshot 4.png)
-![Purview](./reports/screenshot 5.png)
+![Purview](./reports/screenshot1.png)
+![Purview](./reports/screenshot2.png)
+![Purview](./reports/screenshot3.png)
+![Purview](./reports/screenshot4.png)
+![Purview](./reports/screenshot5.png)
 
 ## 📊 Findings
 
@@ -63,8 +63,8 @@ ADLS Gen2 (raw / staging / curated)
 
 ### Great Expectations — Data Quality Validation
 
-![Data Quality](./reports/screenshot 6.png)
-![Data Quality](./reports/screenshot 7.png)
+![Data Quality](./reports/screenshot6.png)
+![Data Quality](./reports/screenshot7.png)
 
 
 **Result: ✅ All 5 expectations passed** against 112,650 rows of curated sales data.
