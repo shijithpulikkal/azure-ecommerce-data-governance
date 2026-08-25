@@ -34,11 +34,7 @@ ADLS Gen2 (raw / staging / curated)
 | **Azure Data Lake Storage Gen2** | The underlying data source being cataloged and validated (shared with [Project 1](../azure-ecommerce-analytics-pipeline)) |
 
 ---
-![Purview](./reports/screenshot1.png)
-![Purview](./reports/screenshot2.png)
-![Purview](./reports/screenshot3.png)
-![Purview](./reports/screenshot4.png)
-![Purview](./reports/screenshot5.png)
+
 
 ## 📊 Findings
 
@@ -58,13 +54,18 @@ ADLS Gen2 (raw / staging / curated)
 
   Purview automatically flagged all three location-related columns as classifiable, without any manual tagging — a concrete example of automated sensitive/location-data detection working out of the box.
 
+![Purview](./reports/screenshot1.png)
+![Purview](./reports/screenshot2.png)
+![Purview](./reports/screenshot3.png)
+![Purview](./reports/screenshot4.png)
+![Purview](./reports/screenshot5.png)
+
+
 - **Honest note on classification accuracy:** Purview labeled `customer_zip_code_prefix` as **"U.S. Zip Codes"**, but this dataset is Brazilian (Olist), so the classifier's label is geographically incorrect even though it correctly identified the column as containing postal-code-like data. This is a useful, realistic finding for a governance project — it shows *why* human review of automated classification matters rather than trusting it blindly, which I've called out explicitly in Next Steps below.
 - Glossary terms were not yet attached to these columns at time of writing — see Next Steps.
 
 ### Great Expectations — Data Quality Validation
 
-![Data Quality](./reports/screenshot6.png)
-![Data Quality](./reports/screenshot7.png)
 
 
 **Result: ✅ All 5 expectations passed** against 112,650 rows of curated sales data.
@@ -80,6 +81,10 @@ ADLS Gen2 (raw / staging / curated)
 **What this means:** the curated layer has no missing values in its key business fields, prices fall within a sane range with no negative or absurd outliers, and every customer state code maps to a real, known value — i.e., no free-text typos or corrupted geography data made it through the pipeline.
 
 **Honest caveat:** this validation run found no failures, which is a genuinely good outcome for a small, already-cleaned public dataset — but it also means this suite hasn't yet been tested against messier data. See "Next Steps" below for how I'd stress-test it further.
+
+![Data Quality](./reports/screenshot6.png)
+![Data Quality](./reports/screenshot7.png)
+
 
 ---
 
